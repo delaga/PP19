@@ -1,6 +1,12 @@
 <?php
 
-// u odnosu na primljenu vrijednost GET parametra boja
-// cijelu stranicu obojajte u primljenu boju
 
-echo "<body style=\"background-color: " , $_GET["boja"], "\"></body>";
+// ako program primi GET parametar broj
+// ispisuje ga uvećanog za 12 puta
+// inače ispiši: obavezan GET parametar broj
+
+if(isset($_GET["broj"])){
+    echo $_GET["broj"]*12;
+}else{
+    echo "obavezan GET parametar broj";
+}
