@@ -10,8 +10,7 @@
         $i=1;
         while ($i<=10) {
             $val=$i*13;
-            echo "$i *13 is $val";
-            echo "<br>";
+            echo "$i *13 is $val"."<br>";
             $i++;
         }
     ?>
