@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,22 +9,25 @@
 <body>
     <h1>HTTP POST Request</h1>
     <br>
-    <form action="post.php" method="post">
-        <div>
-            <label for="name">Name</label>
-            <input type="text" name="user_name">
-        </div>
-        <br>
-        <div>
-            <label for="mail">Email</label>
-            <input type="email" name="user_mail">
-        </div>
-        <br>
-        <div>
-            <input type="submit" name="submit" value="AJDEEE">
-        </div>
+    <form action="<?php echo $_SERVER["PHP_SELF"] ?>"
+          method="post">
+
+        <label for="name">Ime</label>
+        <input type="text" name="name" id="name">
+
+        <label for="mail">email</label>
+        <input type="email" name="mail" id="mail">
+
+        <input type="submit" name="submit" value="Submit">
 
     </form>
+    <?php
+       extract($_POST);
+        echo "<br>";
+        echo $name;
+        echo "<br>";
+        echo $mail;
+    ?>
 
 </body>
 </html>
