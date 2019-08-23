@@ -1,0 +1,50 @@
+div{
+    float: left;
+}
+
+.clear{
+    clear: both;
+}
+
+@media (max-width: 680px){
+
+    .lijevi{
+        min-width: 5rem;
+        min-height: 400px;
+        border: 2px dashed blue;
+        margin: 10px 20px 30px 40px;
+        padding: 10px;
+        background-color: aqua;
+    }
+    
+    .desni{
+        min-width: 10rem;
+        min-height: 600px;
+        border: 2px dotted red;
+        margin: 10px 20px 30px 40px;
+        padding: 10px;
+    }
+
+}
+
+
+@media (min-width: 680px){
+
+    .lijevi{
+        min-width: 10rem;
+        min-height: 400px;
+        border: 2px dashed blue;
+        margin: 10px 20px 30px 40px;
+        padding: 10px;
+        background-color: aqua;
+    }
+    
+    .desni{
+        min-width: 20rem;
+        min-height: 600px;
+        border: 2px dotted red;
+        margin: 10px 20px 30px 40px;
+        padding: 10px;
+    }
+
+}

@@ -1,19 +1,22 @@
 <?php
-//indeksni niz 8 elemenat
-$niz=[1,2,3,4,5,6,7,8];
+	define("BP",__DIR__ . DIRECTORY_SEPARATOR);
 
+	//echo BP;
 
-for($i=0;$i<count($niz);$i++){
-    echo $niz[$i],"<br />";
-}
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 
-foreach($niz as $vrijednost){
-    echo $vrijednost, "<br />";
-}
+	$t=implode(PATH_SEPARATOR, 
+		[
+			BP . "app" . DIRECTORY_SEPARATOR . "model",
+			BP . "app" . DIRECTORY_SEPARATOR . "controller"
+		]
+	);
+	set_include_path($t);
+	spl_autoload_register(function($klasa)
+	{
+    	$putanja = strtr($klasa,"\\",DIRECTORY_SEPARATOR) . ".php";
+    	return include $putanja;
+	});
 
-//asocijativni niz dva ključa, dvije vrijednosti
-$niz = ["k1"=>1, "k2"=>2];
-
-foreach($niz as $kljuc => $vrijednost){
-    echo $kljuc , ": ", $vrijednost, "<br />";
-}
+	APP::start();
